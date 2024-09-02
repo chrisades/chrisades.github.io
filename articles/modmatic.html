@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Ades</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <main class="main-body" id="main-body" style="visibility: visible;">
+            <header>
+                <a href="/index.html"><p class = 'text-block header'>Chris Ades</p></a>
+            </header>
+            <nav class="navbar">
+                <ul>
+                    <li><a class="nav-element" href="/index.html">Home</a></li>
+                    <li><a class="nav-element" href="/about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="article">
+
+                <p class="text-block article-title">Modmatic</p>
+
+                <div class="article-item-a">
+                            <iframe class = "article-item" height="315" src="https://www.youtube.com/embed/DfXkVqNn3KY?si=GOooMcpbPHyPkhFV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                
+                <div class="article-item-b"><p class="text-block article-item-text">The Modmatic (which stands for modulate-chromatic) is a prototype custom MIDI controller that was designed and built with teammates <a class="link" target="_blank" href="https://miakizz.quest" >Mia Kiesman</a> and <a class="link" target="_blank" href="https://www.linkedin.com/in/shilpita-mb/" >Shilpita Mitra-Behura</a>, for our electrical engineering senior design project, with the help of our mentors <a class="link" target="_blank" href="https://sethcluett.com/" >Seth Cluett</a> and <a class="link" target="_blank" href="https://www.engineering.columbia.edu/faculty/david-vallancourt" >David Valencourt</a>.</p></div>
+                
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/group.png"
+                        alt="This is a group photo">
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">The Modmatic is a tool that seeks to enable composers to experiment and explore alternative tuning systems that are impossible with traditional hardware, and help students more intuitively understand central concepts in music theory such as scales, tuning systems, modulation and transposition. It’s split into two main components and works as a keyboard with one hand whose notes can be easily transposed by the other.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Each board is driven by an RP2040 microcontroller. The left side board is the primary controller, which polls the right side board via I2C. Each controller is responsible for transmitting key presses and analog inputs via MIDI or I2C, along with controlling LED outputs. Cherry MX compatible key switches are read as a matrix. Using C++ and the TinyUSB library, key presses send out MIDI protocol messages. Each key also has a NeoPixel compatible RGB LED which is driven by the RP2040 Programmable I/O coprocessor. The custom 3d printed keycaps are opaque and the laser printed clear acrylic plating allows for visibility of the circuitry.</p>
+                </div>
+
+                <p class="text-block article-sub-title">The Shaper</p>
+                                
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/shaper.jpg"
+                        alt="This is an image of the shaper">
+                </div>
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/shaper_board.png"
+                        alt="This is an image of the schematic for the shaper or right hand board">
+                </div>
+
+                <div class="article-item-b"><p class="text-block article-item-text">The Shaper consists of 13 buttons and represents a playable chromatic scale. The first/leftmost button is known as the <span class="highlight">root note</span>. By default the buttons are mapped to one octave of a 12 tone equal temperament chromatic scale that has its <span class="highlight">root note</span> set to middle C and the last note an octave above middle C. Instead of using a traditional black and white style piano keyboard, we thought of using a stacked isomorphic-esq layout that uses colored LEDs as visual landmarks for distinct notes, with the color for each note determined by its frequency. The combination of a stacked layout in conjunction with illuminated visualization comes in handy for built-in features like scale selection and tuning system selection.</p></div>
+
+                <p class="text-block article-sub-title">The Root-Wheel</p>
+                
+                <!-- <div class="vertical-container"> -->
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/root-wheel.jpg"
+                        alt="This is an image of the root wheel">
+                </div>
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/root-wheel_board.png"
+                        alt="This is an image of the shematic for the root wheel or left hand board">
+                </div>
+                <!-- </div> -->
+
+                <div class="article-item-b"><p class="text-block article-item-text">The Root-Wheel contains 2 sets of 12 buttons arranged in a ring. It represents all the Shaper <span class="highlight">root notes</span> that can be selected by the user. You can think of the function of the Root-Wheel similar to what a capo does for a guitar, except the “clamping,” in The Modmatic’s case, is done simply by pressing any button on the wheel. The button located in the inner ring at the 12 O’Clock position is known as the <span class="highlight">master frequency</span>, defaulted to middle C. The buttons go clockwise in intervals of 5ths, with 12 distinct notes where the inner ring contains the <span class="highlight">master frequency</span> octave and the outer ring contains the octave above that. It uses the same colored LED system as The Shaper.</p></div>
+
+                <p class="text-block article-sub-title">Features</p>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Additionally, there are 3 dials, 2 faders, 1 foot pedal, and 1 foot switch. Besides the switch, these send distinct MIDI CC messages via USB which Draw2Sound maps to different sound design parameters. The dials control the volume, the attack, and the release of the synthesized sound; while the two faders control the cutoff frequency of a lowpass filter and the frequency of a tremolo effect. The foot pedal, called Ctrl, controls volume, while the foot switch, known as Shift, changes the functionality of knobs, faders, and buttons. This allows access to features like tuning system selection and scale selection.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">For the timbre of the instrument, we created a digital synthesizer called <a class="link" target="_blank" href="/articles/draw2sound.html">Draw2Sound</a> that allows the user to draw one period of a waveform or its frequency distribution, to be used as a custom sound. Running on a Raspberry Pi, it receives MIDI messages from The Modmatic via USB and outputs the waveform through the Pi’s audio jack.</p>
+                </div>
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/diagram.jpg"
+                        alt="This is an labeled diagram of the modmatic">
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Holding down Shift and moving Dial 2 changes the <span class="highlight">master frequency</span> of the Root-Wheel.</p>
+                </div>
+
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/modmatic/master-frequency.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">A user can change the tuning systems of the Shaper or Root-Wheel by holding down Shift and turning either Dial 3 or Dial 1 respectively. The tuning systems available to The Modmatic are the <a class="link" target="_blank" href="https://en.xen.wiki/w/EDO" >equal divisions of the octave (edo)</a> which go from 12-edo, 11-edo, 10-edo, …, all the way down to 2-edo. Turning a dial clockwise increases the divisions while turning it counterclockwise decreases the divisions. As you turn a dial you can visually see the amount of playable (illuminated) keys go up or down. And, because a user can independently change the tuning system of each hand, unheard tuning and transpositional combinations can be achieved.</p>
+                </div>
+
+                <!-- <div class="vertical-container"> -->
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/modmatic/root-wheel-tuning.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/modmatic/shaper-tuning.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- </div> -->
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">As mentioned before, by default, the Root-Wheel is in 12-edo and its notes go clockwise in intervals of 5ths. Likewise, we had to figure out the clockwise intervals for other tuning systems. We sought to use the non-octave intervals that would be the least dissonant compared to the relative <span class="highlight">root note</span>, when using a timbre designed for that specific tuning system. With the help found in <a class="link" target="_blank" href="https://sethares.engr.wisc.edu/paperspdf/cmj98.pdf" >Consonance-Based Spectral Mappings</a> by William A Sethares, and <a class="link" target="_blank" href="https://github.com/SebastianJiroSchlecht/dissonanceSethares">MATLAB code for measuring dissonance</a> from Sebastian J Schlecht, we found ideal timbres for each tuning system, calculated their dissonance curves, and from the curves, chose the interval with the least dissonance. Draw2Sound includes presets for timbres that were used to find the least dissonant interval.</p>
+                </div>
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/5edo.png">
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Scale selection acts as a visual aid, allowing the user to choose a scale that they can always see illuminated onto the Shaper. To enter scale selection, the user would hold down Shift and press down any <span class="highlight">root note</span> in the Root-Wheel. From there, all the LEDs in the Shaper turn off and the user then selects a scale pattern by pressing the desired Shaper buttons. Mod Mode is a feature that alters what happens to a selected scale when changing to a new <span class="highlight">root note</span>. Pressing down Shift and moving Fader 1 above the center turns Mod Mode on, and moving it below the center turns it off. If Mod Mode is on and the Root-Wheel tunings system is the same as the Shaper tuning system, then the user is selecting specific frequencies to keep illuminated. If Mod Mode is off, the user is selecting a fixed positional pattern to keep illuminated. After the selection, the user can exit by releasing Shift. They can now see how their selected pattern changes, either by position (Mod Mode on) or by frequency/color (Mod Mode off), as they select different <span class="highlight">root notes</span>.</p>
+                </div>
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/modmatic/scale_selection.jpg">
+                </div>
+
+                <div class="vertical-container">
+                    <div class="article-item-a">
+                        <img 
+                            class = "article-item"
+                            src="/images/modmatic/mode_mode_on.jpg">
+                    </div>
+                    <div class="article-item-a">
+                        <img 
+                            class = "article-item"
+                            src="/images/modmatic/mod_mode_off.jpg">
+                    </div>
+                </div>
+
+                <p class="text-block article-sub-title">Future Changes</p>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">As a first prototype, there are some drawbacks with the current iteration. First, the Shaper physically feels unnatural and uncomfortable to play, which is due to its constrained box-like design. We propose a symmetric curved layout that would fit comfortably aligned with the general shape of the human hand. We would also change the buttons from hard keycaps to a flatter and softer material that has more surface area, leaving out any gaps.  These new buttons would be pressure sensitive and have the polyphonic aftertouch functionality. The material must also diffuse an LED in a way that avoids light leaking into the surrounding buttons, and makes individual LEDs distinguishably visible in broad daylight.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Although the LEDs were meant to be helpful, the amount of different colors might be confusing and obtrusive. A minor change would be to, by default, only light up the <span class="highlight">root note</span> and its least dissonant interval. Treating these notes as landmarks relative to other notes, it’d be easier to distinguish multiple octaves of smaller sized tuning systems.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Another proposed change would be to increase the amount of playable buttons so we can expand to larger tuning systems. The amount of additional buttons would be limited by the goal of having a hand sized form factor while maintaining button sizes that would be comfortable to play. This would need to be surveyed and tested, but we guess to have an amount of buttons that can support, at most, the 15-edo tuning system.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">We think it’d be helpful to include a small LCD screen showing the currently set master frequency as well as which tuning systems are in use in both the Root-Wheel and the Shaper. The screen would be located somewhere on the Root-Wheel.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">A possible additional change would be to include a feature called Sustain Mode. This would allow the user to press down on the foot pedal to latch the last registered <span class="highlight">root note</span> in the Shaper, and allow the Root-Wheel to be played as a bass keyboard.</p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">Since the MIDI protocol was designed to support 12-edo A440, the way we handled tuning systems that contained frequencies outside of the classical system was by sending each note on the Shaper on its own MIDI channel and applying the necessary amount of pitch bend to each channel. An upgrade to <a class="link" target="_blank" href="https://midi.org/midi-2-0" >MIDI 2.0</a> compatibility would make microtonal messages simpler to implement in a way that does not use the channels as resources. Each note would carry precise control of the pitch without the use of an extra pitch bend message. Another great advantage of MIDI 2.0 is the ability for bi directional communication. We could utilize this, in conjunction with a custom software, to receive any arbitrary tuning systems and apply it to The Modmatic. Additionally we would be able to automatically change the timbre profile of a synthesizer to match the current tuning system.</p>
+                </div>
+
+            </div>
+
+            <br>
+            <footer>
+                <p class="text-block footer">&copy; 2024. All rights reserved.</p>
+            </footer>
+    </main>  
+
+    <button onclick="hideMain()" class="eye-button">
+        <img id="eyeball" src="/icons/eye-slash-regular.svg">
+    </button>
+
+    <script src="/index.js"></script>
+</body>
+</html>
