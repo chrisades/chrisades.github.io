@@ -162,7 +162,8 @@ main::-webkit-scrollbar-thumb:hover {
     margin:3%;
     position: relative;
     border: 3px solid;
-    animation: borderColorChange 0.4s infinite alternate-reverse;
+    border-color:hsla(180, 100%, 93%, 0.85);
+    /* animation: borderColorChange 0.4s infinite alternate-reverse; */
     border-radius: 5px;
 }
 
@@ -178,9 +179,18 @@ main::-webkit-scrollbar-thumb:hover {
     position: absolute;
     bottom: 0;
     left: 0;
-    animation: colorChange 0.4s infinite alternate-reverse;
+    background-color:hsla(180, 100%, 93%, 0.85);
+    /* animation: colorChange 0.4s infinite alternate-reverse; */
     padding-top: 5px;
     padding-right: 5px;
+}
+
+.gallery-item:hover {
+    animation: borderColorChange 0.4s infinite alternate-reverse;
+}
+
+.gallery-item:hover .gallery-item-text{
+    animation: colorChange 0.4s infinite alternate-reverse;
 }
 
 .article {

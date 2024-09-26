@@ -1,16 +1,16 @@
 const canvas = document.getElementById('canvas1');
 const mainBody = document.getElementById('main-body');
-const eyeball = document.getElementById("eyeball");
+// const eyeball = document.getElementById("eyeball");
 
-function hideMain(){
-    if (mainBody.style.visibility === "visible") {
-        mainBody.style.visibility = "collapse";
-        eyeball.src = "/icons/eye-regular.svg";
-    } else {
-        mainBody.style.visibility = "visible";
-        eyeball.src = "/icons/eye-slash-regular.svg";
-    }
-}
+// function hideMain(){
+//     if (mainBody.style.visibility === "visible") {
+//         mainBody.style.visibility = "collapse";
+//         eyeball.src = "/icons/eye-regular.svg";
+//     } else {
+//         mainBody.style.visibility = "visible";
+//         eyeball.src = "/icons/eye-slash-regular.svg";
+//     }
+// }
 
 window.addEventListener('load', function() {
     const ctx = canvas.getContext('2d');
