@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     background: hsl(0, 0%, 0%);
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #eyeball {
@@ -33,7 +33,7 @@ body {
     bottom: 1%;
     right: 1%;
     z-index: 2; 
-    background-color: hsl(180, 100%, 93%, 0.8); 
+    background-color: rgba(219, 255, 255, 0.8); 
     border-radius: 5px; 
     cursor: pointer;
 }
@@ -42,7 +42,7 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 main {
@@ -124,6 +124,10 @@ footer {
 }
 .footer {
     background-color: hsla(180, 100%, 22%, 0.3);
+}
+
+.apple-device footer {
+    margin-bottom: 5%;
 }
 
 .main-text{
