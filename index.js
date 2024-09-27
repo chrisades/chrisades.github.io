@@ -1,12 +1,3 @@
-const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-const isAndroid = /Android/i.test(navigator.userAgent);
-
-if (isApple) {
-    document.body.classList.add('apple-device');
-} else if (isAndroid) {
-    document.body.classList.add('android-device');
-}
-
 const canvas = document.getElementById('canvas1');
 const mainBody = document.getElementById('main-body');
 const ctx = canvas.getContext('2d');
