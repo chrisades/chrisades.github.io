@@ -48,10 +48,11 @@ canvas {
 main {
     z-index: 1;
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     font-family: ps2p;
+    overflow-y: auto;
     overflow-x: hidden;
-    /* overflow-y: auto; */
+
     height: 100%;
     position: fixed;
     overflow-y: scroll;
