@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     background: hsl(0, 0%, 0%);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #eyeball {
@@ -42,7 +42,7 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 main {
