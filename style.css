@@ -52,11 +52,6 @@ main {
     font-family: ps2p;
     overflow-y: auto;
     overflow-x: hidden;
-
-    height: 100%;
-    position: fixed;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 
@@ -299,6 +294,10 @@ a:hover{
 }
 
 @media (max-width: 800px){
+
+footer {
+    margin-bottom: 20vw;
+}
 .navbar a{    
     width: 150px;
 }
@@ -312,14 +311,6 @@ a:hover{
 .article-item-b {
     width: 90vw; 
 }
-
-/* .article-item-img {
-    margin-top: 2%;
-}
-
-.article-item-vid {
-    margin-top: 2%;
-} */
 
 .article-item {
     margin-top: 2%;
