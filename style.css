@@ -225,7 +225,7 @@ main::-webkit-scrollbar-thumb:hover {
     margin-top: 1%;
     width: 40vw; 
     font-size: 2.3em;
-    border: 5px solid;
+    border: 3.5px solid;
     animation: borderColorChange 0.4s infinite alternate-reverse;
     border-radius: 5px;
 }
@@ -244,8 +244,8 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .highlight{
-    /* color:blueviolet; */
-    animation: textColorChange 0.4s infinite alternate-reverse;
+    color:rgb(156, 156, 156);
+    /* animation: textColorChange 0.4s infinite alternate-reverse; */
 }
 
 .article-item-text{
@@ -254,22 +254,6 @@ main::-webkit-scrollbar-thumb:hover {
     line-height: 1.5;
     font-size: 0.8em;
 }
-/* 
-.article-item-img {
-    margin-top: 4%;
-    width: 100%;
-    text-align: center;
-    border-radius: 5px;
-    opacity: 1;
-}
-
-.article-item-vid {
-    margin-top: 4%;
-    width: 100%;
-    text-align: center;
-    border-radius: 5px;
-    opacity: 1;
-} */
 
 .article-item {
     margin-top: 4%;
@@ -293,14 +277,16 @@ a:hover{
 }
 
 .icons{
-    width: 40vw;
+    padding: 1vw;
+    width: 10vw;
     text-align: center;
     display: grid;
     grid-auto-flow: column; 
     grid-gap: 5%; 
 }
+
 .icons img{
-    width:100%;
+    width:75%;
     height:100%;
 }
 .icons img:hover{
@@ -357,7 +343,7 @@ a:hover{
 
 
 .icons{
-    width: 90vw;
+    width: 30vw;
 }
 
 main::-webkit-scrollbar {
