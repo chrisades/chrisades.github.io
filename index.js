@@ -150,6 +150,16 @@ function animate(timeStamp){
     handleParticles();
     requestAnimationFrame(animate);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const currentYear = new Date().getFullYear();
+    // Find the span element by its ID
+    const yearElement = document.getElementById("current-year");
+    if (yearElement) {
+        yearElement.textContent = currentYear;
+    }
+});
+
 animate(0);
 effect.resize(canvas.width, canvas.height);
 
