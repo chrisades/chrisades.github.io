@@ -265,6 +265,14 @@ main::-webkit-scrollbar-thumb:hover {
     animation: underlineColorChange 0.4s infinite alternate-reverse;
 }
 
+.article-sub-sub-title{
+    margin-top: 5%;
+    font-size: 1.1em;
+
+    /* text-decoration: underline;
+    animation: underlineColorChange 0.4s infinite alternate-reverse; */
+}
+
 @keyframes textColorChange{
     0%, 33% {color: hsl(63, 100%, 66%, 0.8);}
     34%, 66%{color: hsl(109, 100%, 66%, 0.8);}
@@ -281,6 +289,13 @@ main::-webkit-scrollbar-thumb:hover {
     text-align: left;
     line-height: 1.5;
     font-size: 0.8em;
+}
+
+.article-item-text-large{
+    margin-top: 2%;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.1em;
 }
 
 .article-item {
@@ -347,10 +362,6 @@ footer {
 
 .article-item {
     margin-top: 2%;
-}
-
-.article-item-text{
-    font-size: 0.65em; 
 }
 
 .overlay-text{

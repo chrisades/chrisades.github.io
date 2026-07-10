@@ -48,6 +48,122 @@
 
                 <p class="text-block article-sub-title">System Architecture</p>
 
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        The project is split into a modular client-server framework:
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text-large">
+                        1. The Vision Client (OSC Sender)
+                    </p>
+                </div>
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Captures video input via <a class="link" target="_blank" href="https://opencv.org/about/">OpenCV</a> and analyzes 468+ facial landmarks using MediaPipe. It calculates geometric distances between specific face parts (like eyelids, eyebrows, and lips), normalizes the values, and packages them into OSC network packets, sending data from the following facial gestures:
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        X-Position
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/x.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        Y-Position
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/y.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        Z-Position
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/z.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        Mouth Vertical
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/mouth_vert.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        Mouth Horizontal
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/mouth_horiz.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                       Eyeclose (on or off)
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/eyeclosed.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                       Eyebrows
+                    </p>
+                </div>
+                <div class="article-item-a">
+                    <video class="article-item" autoplay muted loop>
+                        <source src="/images/facesynth/eyebrows.mkv" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text-large">
+                        2. The Audio Engine Server (OSC Receiver)
+                    </p>
+                </div>
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Acts as the network synthesizer server. It listens on port 9000 for incoming data streams, unpacking the data sent from the client. I programmed a Pyo granular synth module to use said data to change various parameters.
+                    </p>
+                </div>
+
+                <p class="text-block article-sub-title">Granular FaceSynth Demonstration</p>
+                <div class="article-item-a">
+                    <video class="article-item" muted loop controls>
+                        <source src="/images/facesynth/demo1.mkv" type="video/mp4">
+                    </video>
+                </div>
+            
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Your distance from the camera (Z-Position) adjusts the overall volume. Stretching your mouth wide (Mouth Horizontal) shifts the pitch of a harmony effect up or down, opening your mouth tall (Mouth Vertical) blends that harmony's volume into the mix, and raising your eyebrows (Eyebrows) increases its echoing feedback loop. Meanwhile, closing your eyes (Eyeclosed) acts as a glitch switch, freezing the audio into a stutter; when your eyes are open, moving your face (X and Y Positions) controls stereo panning and grain size, but when your eyes are closed, those same movements warp a muffled filter and add a gritty digital distortion.
+                    </p>
+                </div>
 
             </div>
 

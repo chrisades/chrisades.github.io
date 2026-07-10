@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Ades</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <main class="main-body" id="main-body" style="visibility: visible;">
+            <header>
+                <a href="/index.html"><p class = 'text-block header'>Chris Ades</p></a>
+            </header>
+            <nav class="navbar">
+                <ul>
+                    <li><a class="nav-element" href="/index.html">Home</a></li>
+                    <li><a class="nav-element" href="/about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="article">
+
+                <p class="text-block article-title">Puzzle Cube Sequencer</p>
+
+                <div class="article-item-a">
+                    <video class="article-item" muted loop controls>
+                        <source src="/images/puzzlecube/puzzlecubesequencer_demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        The Puzzle Cube Sequencer was an interactive digital musical instrument built in 2023 for the Digital Music course I took at the <a class="link" type="_blank" href="https://cmc.music.columbia.edu/cmc_courses">Computer Music Center</a> at Columbia University. Written in Python, it leverages <a class="link" type="_blank" href="https://doc.qt.io/qtforpython-6/">PyQt</a> to render a laid-flat 4x4 Puzzle Cube as a graphic interface, while relying on <a class="link" type="_blank" href="https://www.pygame.org/wiki/about">Pygame</a> to trigger an anti-aliased square wave wavetable as its tone. Instead of starting with a scrambled cube, you start with a solved one and proceed to scramble it into a unique sequence of notes. 
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Each color corresponds to a particular pitch, which can be triggered when a sequence is chosen. You can think of each individual tile as its own step. To create a sequence you press the “choose sequence” button and then select the specific tiles in the specific order you want them to be played. After that, you can press “Start” to begin the looping sequence. As the sequence is playing you have the choice of changing the tempo/BPM, changing any color’s pitch, or applying a <a class="link" type="_blank" href="https://cmc.music.columbia.edu/cmc_courses">move</a> on the cube. Selected notes can be muted by clicking them again, turning them grey, and an entire sequence can be halted by pressing the “Stop” button. 
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Not all moves are available, but they can simply be added. Some future implications include sending sequenced note data through MIDI or OSC. Another idea would be to realize this into hardware using a bluetooth puzzle cube.
+                    </p>
+                </div>
+
+            </div>
+
+            <br>
+            <footer>
+                <p class="text-block footer">&copy; <span id="current-year"></span>. All rights reserved.</p>
+            </footer>
+    </main>  
+    <script src="/index.js"></script>
+</body>
+</html>
