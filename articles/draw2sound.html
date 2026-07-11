@@ -28,13 +28,16 @@
                 </div> -->
 
                 <div class="article-item-a">
-                    <img 
-                        class = "article-item"
-                        src="/images/home/draw2sound.png"
-                        >
+                    <video class="article-item" muted loop controls>
+                        <source src="/images/draw2sound/d2s_demo.mp4" type="video/mp4">
+                    </video>
                 </div>
                 
-                <div class="article-item-b"><p class="text-block article-item-text">Draw2Sound is a digital synthesizer that utilizes a user-drawn waveform as its timbre/tone-quality. You can create a sound by either drawing it in the time domain, or drawing it in the frequency domain. To hear your synthesized sound, use the built-in keyboard piano or plug in any midi controller with keys. You can further shape the sound by altering the attack, release, and LPF using a midi controller. View your waveform with the built-in scope or spectrum functions.</a>.</p></div>
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Draw2Sound is a straightforward wavetable player made in 2024 as a sound source for the <a class="link" target="_blank" href="/articles/modmatic.html">Modmatic</a>. Built in Python using the <a class="link" type="_blank" href="https://doc.qt.io/qtforpython-6/">PyQt</a> and <a class="link" target="_blank" href="https://belangeo.github.io/pyo/index.html">Pyo</a> libraries, it allows sounds to be created either by drawing directly in the time canvas or by placing dots in the frequency canvas. The synthesized sound can be heard using the built-in keyboard piano or by connecting a MIDI controller and the audio can be viewed in real-time using the built-in scope or spectrum functions.
+                    </p>
+                </div>
 
 
             </div>
