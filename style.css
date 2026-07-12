@@ -185,6 +185,9 @@ main::-webkit-scrollbar-thumb:hover {
     padding-left: 5px;
 }
 
+audio {
+    margin: 15px; /* Adds 20px of space to the top, bottom, left, and right */
+}
 /* .gallery-item:hover {
     border-color: rgb(255, 0, 0);
 } */

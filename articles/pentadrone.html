@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Ades</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <main class="main-body" id="main-body" style="visibility: visible;">
+            <header>
+                <a href="/index.html"><p class = 'text-block header'>Chris Ades</p></a>
+            </header>
+            <nav class="navbar">
+                <ul>
+                    <li><a class="nav-element" href="/index.html">Home</a></li>
+                    <li><a class="nav-element" href="/about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="article">
+
+                <p class="text-block article-title">Pentadrone</p>
+
+                <!-- <div class="article-item-a">
+                            <iframe class = "article-item" height="315" src="https://www.youtube.com/embed/DfXkVqNn3KY?si=GOooMcpbPHyPkhFV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> -->
+
+                <div class="article-item-a">
+                    <img 
+                        class = "article-item"
+                        src="/images/home/pentadrone.png"
+                        >
+                </div>
+                
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Pentadrone is a five-voice wavetable drone synthesizer built as a JUCE audio plugin in C++. It started as a prototype for a hardware synth idea, and mainly as a way to get started learning how to write software synthesizers in C++. It takes some inspiration from analog drone synths such as the <a class="link" target="_blank" href="https://soundwork.shop/quord-1">Quord by Sound Workshop</a>. The source code for Pentadrone can be found in <a class="link" target="_blank" href="https://github.com/chrisades/Pentadrone">my Github</a>.
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Each of the five drone voices is triggered by a fixed MIDI note. A voice isn't a single oscillator, it's five wavetable oscillators, each with the ability to morph continuously between half-wave-rectified sine, square, triangle, and saw, with independent pitch, level, and pan. The five oscillators sum and pass through a stereo state-variable filter (independent left/right cutoff and resonance) before being scaled by the drone's envelope and mixed with the other four voices. Hold mode lets a drone sustain after note-off rather than releasing.
+                    </p>
+                </div>
+
+                <p class="text-block article-sub-sub-title">Wave Morphing Demonstration</p>
+                <div class="article-item-a">
+                    <video class="article-item" muted loop controls>
+                        <source src="/images/pentadrone/pentadrone_morph_demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        Each drone also carries five LFOs, and each LFO can be routed to any of 42 modulation destinations: filter cutoff, resonance, drone level, an individual oscillator's morph/pitch/pan/level, or another LFO's own morph, speed, and depth. Routing is done with a dropdown menu and an LFO can be routed more than once to affect as many parameters at once. LFOs modulating other LFOs is where most of the instrument's movement comes from.
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        To keep the oscillators from aliasing while morphing, the waveshapes are precomputed into banks of band-limited wavetables, mip-mapped by pitch, with Hermite interpolation between samples. Precomputing that many tables is also why the plugin takes about 45 seconds to load.
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        The VST prototype is missing several things the envisioned hardware version (pictured at the top) would have: tether mode (parameters gliding between drones), attenuverted LFOs, filter state morphing (LP to BP to HP), filter fold/drive, mod amounts for drone morph and frequency, and the entire touchboard section. The touch board section included functionality for ring modulation, phase distortion, and cross modulation, as well as the ability to paraphonically play individual oscillators in a drone.
+                    </p>
+                </div>
+
+                <div class="article-item-b">
+                    <p class="text-block article-item-text">
+                        It also has some open issues: no preset save/load, per-drone parameter changes currently affect all drones rather than just the selected one, and more than two active drones causes audible distortion of unclear origin.
+                    </p>
+                </div>
+
+                <p class="text-block article-sub-title">Demonstrations</p>
+
+                <div class="article-item-a">
+                    <p class="text-block article-item-text">
+                        The following demos were recorded in Reaper using exclusively the Pentadrone VST with no external plugins or effects applied.
+                    </p>
+                </div>
+
+                <audio controls>
+                    <source src="/images/pentadrone/PentradroneTestE.wav" type="audio/mpeg">
+                </audio>
+
+                <audio controls>
+                    <source src="/images/pentadrone/PentradroneTestB.wav" type="audio/mpeg">
+                </audio>
+
+                <audio controls>
+                    <source src="/images/pentadrone/PentradroneTestH.wav" type="audio/mpeg">
+                </audio>
+
+                <audio controls>
+                    <source src="/images/pentadrone/PentradroneTestG.wav" type="audio/mpeg">
+                </audio>
+
+                <audio controls>
+                    <source src="/images/pentadrone/PentradroneTestC.wav" type="audio/mpeg">
+                </audio>
+
+
+            </div>
+
+            <br>
+            <footer>
+                <p class="text-block footer">&copy; <span id="current-year"></span>. All rights reserved.</p>
+            </footer>
+    </main>  
+    <script src="/index.js"></script>
+</body>
+</html>
